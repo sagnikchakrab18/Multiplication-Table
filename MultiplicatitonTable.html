@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  width:100%;
+}
+table, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+td {
+  padding: 15px;
+  text-align: center;
+}
+table#myTable tr:nth-child(even) {
+  background-color: #eee;
+}
+table#myTable tr:nth-child(odd) {
+ background-color: #fff;
+}
+
+</style>
+</head>
+
+<body>
+
+<button onclick="tableFunction()">CREATE TABLE</buton>
+
+<script>
+function tableFunction(){
+ var row = prompt("Please enter number of rows:","4");
+ var col = prompt("Please enter number of coloumns:","3");
+ var x = document.createElement("TABLE");
+ x.setAttribute("id", "myTable");
+  
+ for(i=0;i<row;i++){
+   var y = document.createElement("tr");
+   y.setAttribute("id", "myTr");
+   for(j=0;j<col;j++){
+     var z = document.createElement("td");
+     var t = document.createTextNode((i+1)*(j+1));
+     z.appendChild(t);
+     y.appendChild(z);
+   }
+  x.appendChild(y);
+ }
+ document.body.appendChild(x);
+}
+</script>
+
+</body>
+</html>
